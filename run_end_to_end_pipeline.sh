@@ -23,10 +23,10 @@ SPARK_SUBMIT_BIN="spark-submit"
 # -----------------------------
 # Path configuration
 # -----------------------------
-SPARK_JOB_PATH="/home/sparshsharma/spark_job.py"
+SPARK_JOB_PATH="/home/sparshsharma/fire_pollution_analysis.py"
 DUCKDB_DATABASE_PATH="/home/sparshsharma/final.db"
 OUTPUT_DIR="/home/sparshsharma/output"
-DUCKDB_SQL_PATH="/home/sparshsharma/queries_v2.sql"
+DUCKDB_SQL_PATH="/home/sparshsharma/duckdb_analytical_queries.sql"
 
 # DuckDB placeholder replacement value
 PARQUET_LOAD_PATH="${OUTPUT_DIR}/*.parquet"
