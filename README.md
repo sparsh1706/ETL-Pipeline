@@ -216,13 +216,13 @@ pip install pyspark
 ```
 ## 7. Code Sample & Organization
 
-Key files:
+**Key files:**
 
-- spark_job.py – Spark transformations and feature engineering
+- fire_pollution_analysis.py – Spark transformations and feature engineering
 
-- queries_v2.sql – Analytical queries and aggregations in DuckDB
+- duckdb_analytical_queries.sql – Analytical queries and aggregations in DuckDB
 
-- pipeline_test_2.sh – End-to-end pipeline orchestration
+- run_end_to_end_pipeline.sh – End-to-end pipeline orchestration
 
 Code is structured to emphasize:
 
