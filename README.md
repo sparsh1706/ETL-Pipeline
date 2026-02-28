@@ -42,10 +42,8 @@ This framing intentionally avoids over-claiming causality and instead focuses on
 
 **Dataset	Description**
 US Wildfires (1992–2015)	Fire size, cause, dates, and locations (SQLite)
-Link: https://drive.google.com/file/d/1GyFFy_ifvy3TrLUj_vWZ6xrH7mtEskUs/view?usp=sharing
 
 US Air Pollution (2000–2016)	AQI and pollutant measurements including NO₂ (CSV)
-Link: https://drive.google.com/file/d/1hCR16nGVYeptgQ-SLy4rCix5fPoPb2jJ/view?usp=sharing
 
 **Key data decisions**
 
@@ -94,10 +92,15 @@ Apache Spark (cleaning, joins, feature engineering)
 Parquet
 
    ↓
+   
 DuckDB (analytical SQL & aggregations)
+
    ↓
+   
 CSV outputs
+
    ↓
+   
 Tableau Dashboard
 
 **Why this design**
@@ -105,6 +108,31 @@ Tableau Dashboard
 - Spark enables scalable transformations beyond pandas
 - DuckDB provides fast analytical SQL without heavy infrastructure
 - Clean separation between compute, analytics, and visualization
+
+## 6. Reproducibility & How to Run
+**Prerequisites**
+
+Python 3.x
+Apache Spark
+DuckDB
+
+Bash-compatible environment
+
+**Execution**
+
+Run the pipeline using:
+
+bash pipeline_test_2.sh
+
+This script:
+
+1. Executes Spark transformations
+
+2. Writes intermediate Parquet files
+
+3. Runs DuckDB SQL analytics
+
+4. Exports final CSVs for visualization
 
 Outputs are reproducible and BI-ready
 This project processes data using PySpark and DuckDB to generate aggregated CSV files for visualization in Tableau. It involves the following main steps:
@@ -117,7 +145,7 @@ This project processes data using PySpark and DuckDB to generate aggregated CSV 
 
 4. Running the data processing pipeline to generate output CSVs that can be used in Tableau or other visualization tools.
 
-## 1. Activating Google Cloud and Creating an Instance
+## Activating Google Cloud and Creating an Instance
 
 Create a Google Cloud account if you don't already have one
 
@@ -125,7 +153,7 @@ Activate billing for your account to access compute resources.
 
 Launch your VM instance by navigating to Compute Engine -> VM Instance -> Create Instance and selecting your preferences
 
-## 2. Installing all pre-requisites required
+## Installing all pre-requisites required
 
 ### Install Java (required for PySpark)
 
@@ -167,9 +195,9 @@ hadoop version
 
 ### Dowload the files from google sheets and upload to the GCP
 
-Pollution data: https://drive.google.com/file/d/1vdUKFzU0-SG7IaZFACPymmEy5WO5ad0M/view?usp=sharing
+Pollution data: https://drive.google.com/file/d/1hCR16nGVYeptgQ-SLy4rCix5fPoPb2jJ/view?usp=sharing
 
-Fire data: https://drive.google.com/file/d/1U9cHiZIfkBjSviUwvjrpoRDxiPA9VTKE/view?usp=sharing
+Fire data: [https://drive.google.com/file/d/1U9cHiZIfkBjSviUwvjrpoRDxiPA9VTKE/view?usp=sharing](https://drive.google.com/file/d/1GyFFy_ifvy3TrLUj_vWZ6xrH7mtEskUs/view?usp=sharing)
 
 ### Install DuckDB
 pip install duckdb
