@@ -48,9 +48,9 @@ This framing intentionally avoids over-claiming causality and instead focuses on
 
 **Dataset	Description**
 
-US Wildfires (1992–2015)	Fire size, cause, dates, and locations (SQLite)
+1. US Wildfires (1992–2015):	Fire size, cause, dates, and locations (SQLite)
 
-US Air Pollution (2000–2016)	AQI and pollutant measurements including NO₂ (CSV)
+2. US Air Pollution (2000–2016):	AQI and pollutant measurements including NO₂ (CSV)
 
 **Key data decisions**
 
