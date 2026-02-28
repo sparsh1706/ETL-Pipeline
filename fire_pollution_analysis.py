@@ -1,8 +1,6 @@
 """
 fire_pollution_analysis.py
-Tubi Take-Home Assignment Ready
-Author: [Your Name]
-Date: [Today's Date]
+Author: Sparsh Sharma
 
 Description:
 This script reads wildfire and pollution datasets, 
