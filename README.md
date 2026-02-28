@@ -83,11 +83,16 @@ This approach emphasizes interpretability and robustness over complex modeling, 
 
 ## 5. Pipeline Architecture
 
-Raw Data \n
-   ↓ \n
-Apache Spark (cleaning, joins, feature engineering) \n
-   ↓ \n
-Parquet \n
+Raw Data
+
+   ↓
+   
+Apache Spark (cleaning, joins, feature engineering)
+
+   ↓
+   
+Parquet
+
    ↓
 DuckDB (analytical SQL & aggregations)
    ↓
