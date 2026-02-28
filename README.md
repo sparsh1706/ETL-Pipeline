@@ -8,7 +8,7 @@ End-to-End Data Science Project
 
 This project analyzes how wildfire events impact air pollution levels over time and geography, with a focus on California and Arizona.
 
-Rather than treating this as a pure data engineering task, I framed it as a data science impact analysis problem, where the goal was to:
+I built this data science impact analysis project as part of my course over 3 months, where the goal was to:
 
 - Engineer meaningful features from raw environmental data
 
@@ -276,7 +276,7 @@ Tableau Public dashboard: https://public.tableau.com/app/profile/sparsh.sharma11
 
 - Link pollution spikes to health outcomes (e.g., hospital admissions)
 
-## 10. Why This Project Is Relevant for a Data Scientist Role
+## 10. Conclusion
 
 This project demonstrates how I approach data science problems end to end:
 
