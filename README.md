@@ -129,7 +129,7 @@ Bash-compatible environment
 
 Run the pipeline using:
 
-`bash pipeline_test_2.sh`
+`bash run_end_to_end_pipeline.sh`
 
 This script:
 
@@ -234,15 +234,15 @@ Code is structured to emphasize:
 
 ### Running the Data Processing Pipeline
 
-Run the complete pipeline script (pipeline_test_2.sh) which will execute:
+Run the complete pipeline script (run_end_to_end_pipeline.sh) which will execute:
 
-- PySpark processing (spark_job.py) to create Parquet files.
+- PySpark processing (fire_pollution_analysis.py) to create Parquet files.
 
-- DuckDB SQL queries (queries_v2.sql) to generate aggregated CSV outputs.
+- DuckDB SQL queries (duckdb_analytical_queries.sql) to generate aggregated CSV outputs.
 
 - Execute the pipeline with:
 ```
-bash pipeline_test_2.sh
+bash run_end_to_end_pipeline.sh
 ```
 After successful execution, aggregated output CSV files will be available in the output directory
 
