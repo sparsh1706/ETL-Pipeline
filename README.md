@@ -256,6 +256,10 @@ The Tableau dashboard enables non-technical users to:
 
 This serves as the stakeholder-facing artifact of the analysis.
 
+Once you have generated your aggregated CSV outputs, you can import these files directly into Tableau Desktop or Tableau Cloud for visualization purposes.
+
+Tableau Public dashboard: https://public.tableau.com/app/profile/sparsh.sharma1162/viz/ImpactofWildfiresonAirQualityDashboard/Dashboard?publish=yes
+
 ## 9. Limitations & Future Work
 
 **Limitations**
