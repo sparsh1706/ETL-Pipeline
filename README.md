@@ -28,7 +28,7 @@ The final output includes:
 
 - An interactive Tableau dashboard for exploration and decision-making
 
-## 2. Problem Framing (Data Science Perspective)
+## 2. Problem Framing
 
 **Core Question**
 
