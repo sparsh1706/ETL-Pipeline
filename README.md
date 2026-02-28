@@ -1,5 +1,107 @@
 # UCLA MSBA Data Management Project - Impact of Wildfires on Air Pollution Levels: Sparsh Sharma
 
+## 1. Project Overview
+
+This project analyzes how wildfire events impact air pollution levels over time and geography, with a focus on California and Arizona.
+
+Rather than treating this as a pure data engineering task, I framed it as a data science impact analysis problem, where the goal was to:
+
+- Engineer meaningful features from raw environmental data
+
+- Quantify pollution changes before and after wildfire events
+
+- Interpret results responsibly using observational data
+
+- Deliver insights through an interactive, stakeholder-friendly dashboard
+
+The final output includes:
+
+- A reproducible ETL + analytics pipeline
+
+- Analysis-ready datasets
+
+- An interactive Tableau dashboard for exploration and decision-making
+
+## 2. Problem Framing (Data Science Perspective)
+
+**Core Question**
+
+How do wildfire events affect air pollution levels, and does fire severity influence the magnitude and duration of impact?
+
+**Why this matters**
+
+- Wildfire-related air pollution poses serious public health risks
+
+- Understanding which fires matter most helps prioritize response and mitigation
+
+- Quantifying post-fire pollution persistence informs public advisories
+
+This framing intentionally avoids over-claiming causality and instead focuses on consistent, interpretable patterns in real-world data.
+
+## 3. Data Sources
+
+**Dataset	Description**
+US Wildfires (1992–2015)	Fire size, cause, dates, and locations (SQLite)
+Link: https://drive.google.com/file/d/1GyFFy_ifvy3TrLUj_vWZ6xrH7mtEskUs/view?usp=sharing
+
+US Air Pollution (2000–2016)	AQI and pollutant measurements including NO₂ (CSV)
+Link: https://drive.google.com/file/d/1hCR16nGVYeptgQ-SLy4rCix5fPoPb2jJ/view?usp=sharing
+
+**Key data decisions**
+
+- Scoped analysis to California and Arizona to balance signal quality and compute cost
+
+- Prioritized data completeness over fully automated geocoding
+
+- Selected AQI and NO₂ as primary risk-sensitive metrics
+  
+
+## 4. Feature Engineering & Analytical Approach
+
+Most of the data science work in this project happens during transformation.
+
+**Engineered Features**
+
+1. Pre- vs Post-Wildfire AQI windows
+
+2. Fire size classes (severity-based categorical features)
+
+3. Peak daily AQI to capture worst-case exposure
+
+4. Aggregations at event, date, and regional levels
+ 
+**Analytical Strategy**
+
+1. Pre/post comparisons within the same geography
+
+2. Correlation analysis between fire size and pollution change
+
+3. Stratified analysis by wildfire severity class
+
+This approach emphasizes interpretability and robustness over complex modeling, given the observational nature of the data.
+
+
+## 5. Pipeline Architecture
+
+Raw Data
+   ↓
+Apache Spark (cleaning, joins, feature engineering)
+   ↓
+Parquet
+   ↓
+DuckDB (analytical SQL & aggregations)
+   ↓
+CSV outputs
+   ↓
+Tableau Dashboard
+
+**Why this design**
+
+- Spark enables scalable transformations beyond pandas
+- DuckDB provides fast analytical SQL without heavy infrastructure
+- Clean separation between compute, analytics, and visualization
+
+Outputs are reproducible and BI-ready
 This project processes data using PySpark and DuckDB to generate aggregated CSV files for visualization in Tableau. It involves the following main steps:
 
 1. Setting up a Google Cloud instance.
