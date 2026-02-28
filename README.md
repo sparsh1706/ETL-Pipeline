@@ -1,4 +1,9 @@
-# UCLA MSBA Data Management Project - Impact of Wildfires on Air Pollution Levels: Sparsh Sharma
+# Impact of Wildfires on Air Pollution
+
+End-to-End Data Science Project
+
+**Author**: Sparsh Sharma
+**Role**: Primary contributor (pipeline design, feature engineering, analysis, reproducibility)
 
 ## 1. Project Overview
 
@@ -41,6 +46,7 @@ This framing intentionally avoids over-claiming causality and instead focuses on
 ## 3. Data Sources
 
 **Dataset	Description**
+
 US Wildfires (1992–2015)	Fire size, cause, dates, and locations (SQLite)
 
 US Air Pollution (2000–2016)	AQI and pollutant measurements including NO₂ (CSV)
@@ -145,7 +151,7 @@ This project processes data using PySpark and DuckDB to generate aggregated CSV 
 
 4. Running the data processing pipeline to generate output CSVs that can be used in Tableau or other visualization tools.
 
-## Activating Google Cloud and Creating an Instance
+### Activating Google Cloud and Creating an Instance
 
 Create a Google Cloud account if you don't already have one
 
@@ -153,27 +159,27 @@ Activate billing for your account to access compute resources.
 
 Launch your VM instance by navigating to Compute Engine -> VM Instance -> Create Instance and selecting your preferences
 
-## Installing all pre-requisites required
+### Installing all pre-requisites required
 
-### Install Java (required for PySpark)
+#### Install Java (required for PySpark)
 
 sudo apt install openjdk-11-jdk -y
 
-### Verify Java Installation
+#### Verify Java Installation
 
 java -version
 
-### Install Python and pip
+#### Install Python and pip
 
 sudo apt install python3 python3-pip python3-venv -y
 
-### Verify Python installation
+#### Verify Python installation
 
 python3 --version 
 
 pip3 --version
 
-### Install Hadoop (required for PySpark)
+#### Install Hadoop (required for PySpark)
 
 wget https://downloads.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
 
@@ -181,7 +187,7 @@ sudo tar -xzvf hadoop-3.3.6.tar.gz -C /opt/
 
 sudo mv /opt/hadoop-3.3.6 /opt/hadoop
 
-### Set Hadoop environment variables (add these lines to your .bashrc):
+#### Set Hadoop environment variables (add these lines to your .bashrc):
 
 echo 'export HADOOP_HOME=/opt/hadoop' >> ~/.bashrc
 
@@ -189,54 +195,90 @@ echo 'export PATH=$PATH:$HADOOP_HOME/bin' >> ~/.bashrc
 
 source ~/.bashrc
 
-### Verify Hadoop installation:
+#### Verify Hadoop installation:
 
 hadoop version
 
-### Dowload the files from google sheets and upload to the GCP
+#### Download the files from google drive and upload to the GCP
 
 Pollution data: https://drive.google.com/file/d/1hCR16nGVYeptgQ-SLy4rCix5fPoPb2jJ/view?usp=sharing
 
 Fire data: [https://drive.google.com/file/d/1U9cHiZIfkBjSviUwvjrpoRDxiPA9VTKE/view?usp=sharing](https://drive.google.com/file/d/1GyFFy_ifvy3TrLUj_vWZ6xrH7mtEskUs/view?usp=sharing)
 
-### Install DuckDB
+#### Install DuckDB
 pip install duckdb
 
-### Install PySpark
+#### Install PySpark
 pip install pyspark
 
-## 3. Cloning this Repository to Get Input Files and Pipeline Scripts
+## 7. Code Sample & Organization
 
-git clone https://github.com/Prof-Rosario-UCLA/team16.git
+Key files:
 
-### Navigate into the directory 
+- spark_job.py – Spark transformations and feature engineering
 
-Make sure the following files are present after cloning:
+- queries_v2.sql – Analytical queries and aggregations in DuckDB
 
-1. 2 Input CSV files (used by PySpark script)
+- pipeline_test_2.sh – End-to-end pipeline orchestration
 
-2. spark_job.py: PySpark script for initial data processing and joining CSV files into Parquet format. (update the location CSV files)
+Code is structured to emphasize:
 
-3. queries_v2.sql: SQL queries for DuckDB aggregations. (use the output file of spark_job as base)
+ - Readability
 
-4. pipeline_test_2.sh: Python script orchestrating the entire pipeline execution. (update the location spark_job, queries_v2, output CSV location)
+- Modularity
 
-## 4. Running the Data Processing Pipeline
+- Clear separation of responsibilities
+
+### Running the Data Processing Pipeline
 
 Run the complete pipeline script (pipeline_test_2.sh) which will execute:
 
-PySpark processing (spark_job.py) to create Parquet files.
+- PySpark processing (spark_job.py) to create Parquet files.
 
-DuckDB SQL queries (queries_v2.sql) to generate aggregated CSV outputs.
+- DuckDB SQL queries (queries_v2.sql) to generate aggregated CSV outputs.
 
-Execute the pipeline with:
+- Execute the pipeline with:
 
 bash pipeline_test_2.sh
 
 After successful execution, aggregated output CSV files will be available in the output directory
 
-## Next Steps: Visualization in Tableau
+## 8. Tableau Dashboard
 
-Once you have generated your aggregated CSV outputs, you can import these files directly into Tableau Desktop or Tableau Cloud for visualization purposes.
+The Tableau dashboard enables non-technical users to:
 
-Tableau public dashboard: https://public.tableau.com/app/profile/sparsh.sharma1162/viz/ImpactofWildfiresonAirQualityDashboard/Dashboard?publish=yes
+- Explore pollution trends across time and geography
+
+- Filter by fire size, cause, and year
+
+- Identify regions and events with the highest pollution impact
+
+This serves as the stakeholder-facing artifact of the analysis.
+
+## 9. Limitations & Future Work
+
+**Limitations**
+
+- Observational data limits causal inference
+
+- Weather variables not explicitly controlled for
+
+**Future extensions**
+
+- Incorporate wind and temperature data
+
+- Model lag effects more explicitly
+
+- Link pollution spikes to health outcomes (e.g., hospital admissions)
+
+## 10. Why This Project Is Relevant for a Data Scientist Role
+
+This project demonstrates how I approach data science problems end to end:
+
+- Framing ambiguous questions into analyzable hypotheses
+
+- Engineering meaningful features from messy real-world data
+
+- Making thoughtful tradeoffs around data quality and scope
+
+- Communicating insights clearly to technical and non-technical audiences
