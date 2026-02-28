@@ -6,7 +6,9 @@ End-to-End Data Science Project
 
 ## 1. Project Overview
 
-This project analyzes how wildfire events impact air pollution levels over time and geography, with a focus on California and Arizona.
+This project analyzes how wildfire events impact air pollution levels over time and geography, with a focus on California and Arizona. 
+
+The inspiration for this project emerged after witnessing the LA wildfires in Jan-Feb 2025 up close.
 
 I built this data science impact analysis project as part of my course over 3 months, where the goal was to:
 
