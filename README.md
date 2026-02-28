@@ -3,6 +3,7 @@
 End-to-End Data Science Project
 
 **Author**: Sparsh Sharma
+
 **Role**: Primary contributor (pipeline design, feature engineering, analysis, reproducibility)
 
 ## 1. Project Overview
@@ -128,7 +129,7 @@ Bash-compatible environment
 
 Run the pipeline using:
 
-bash pipeline_test_2.sh
+`bash pipeline_test_2.sh`
 
 This script:
 
@@ -163,42 +164,42 @@ Launch your VM instance by navigating to Compute Engine -> VM Instance -> Create
 
 #### Install Java (required for PySpark)
 
-sudo apt install openjdk-11-jdk -y
+```sudo apt install openjdk-11-jdk -y```
 
 #### Verify Java Installation
 
-java -version
+```java -version```
 
 #### Install Python and pip
 
-sudo apt install python3 python3-pip python3-venv -y
+```sudo apt install python3 python3-pip python3-venv -y```
 
 #### Verify Python installation
-
+```
 python3 --version 
 
 pip3 --version
-
+```
 #### Install Hadoop (required for PySpark)
-
+```
 wget https://downloads.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
 
 sudo tar -xzvf hadoop-3.3.6.tar.gz -C /opt/
 
 sudo mv /opt/hadoop-3.3.6 /opt/hadoop
-
+```
 #### Set Hadoop environment variables (add these lines to your .bashrc):
-
+```
 echo 'export HADOOP_HOME=/opt/hadoop' >> ~/.bashrc
 
 echo 'export PATH=$PATH:$HADOOP_HOME/bin' >> ~/.bashrc
 
 source ~/.bashrc
-
+```
 #### Verify Hadoop installation:
-
+```
 hadoop version
-
+```
 #### Download the files from google drive and upload to the GCP
 
 Pollution data: https://drive.google.com/file/d/1hCR16nGVYeptgQ-SLy4rCix5fPoPb2jJ/view?usp=sharing
@@ -206,11 +207,12 @@ Pollution data: https://drive.google.com/file/d/1hCR16nGVYeptgQ-SLy4rCix5fPoPb2j
 Fire data: [https://drive.google.com/file/d/1U9cHiZIfkBjSviUwvjrpoRDxiPA9VTKE/view?usp=sharing](https://drive.google.com/file/d/1GyFFy_ifvy3TrLUj_vWZ6xrH7mtEskUs/view?usp=sharing)
 
 #### Install DuckDB
+```
 pip install duckdb
 
 #### Install PySpark
 pip install pyspark
-
+```
 ## 7. Code Sample & Organization
 
 Key files:
