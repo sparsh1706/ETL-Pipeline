@@ -4,8 +4,6 @@ End-to-End Data Science Project
 
 **Author**: Sparsh Sharma
 
-**Role**: Primary contributor (pipeline design, feature engineering, analysis, reproducibility)
-
 ## 1. Project Overview
 
 This project analyzes how wildfire events impact air pollution levels over time and geography, with a focus on California and Arizona.
@@ -209,8 +207,9 @@ Fire data: [https://drive.google.com/file/d/1U9cHiZIfkBjSviUwvjrpoRDxiPA9VTKE/vi
 #### Install DuckDB
 ```
 pip install duckdb
-
+```
 #### Install PySpark
+```
 pip install pyspark
 ```
 ## 7. Code Sample & Organization
@@ -240,9 +239,9 @@ Run the complete pipeline script (pipeline_test_2.sh) which will execute:
 - DuckDB SQL queries (queries_v2.sql) to generate aggregated CSV outputs.
 
 - Execute the pipeline with:
-
+```
 bash pipeline_test_2.sh
-
+```
 After successful execution, aggregated output CSV files will be available in the output directory
 
 ## 8. Tableau Dashboard
